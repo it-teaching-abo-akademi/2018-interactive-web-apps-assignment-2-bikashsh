@@ -25,7 +25,7 @@ function getRequest(url, callback){
 }
 function getLatestDataSet(data){
     dataSet = data["datasets"][0];
-    getRequest("http://data.foli.fi/gtfs/v0/20181127-130442/routes", fetchRouteList); //Fetching the routes
+    getRequest("https://data.foli.fi/gtfs/v0/20181127-130442/routes", fetchRouteList); //Fetching the routes
 }
 
 function deleteMarkers(){

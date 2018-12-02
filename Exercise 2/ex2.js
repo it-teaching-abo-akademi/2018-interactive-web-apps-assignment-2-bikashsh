@@ -59,7 +59,7 @@ function f_request() {
     var sel = document.getElementById("selection");
     var country_name= sel.options[sel.selectedIndex].value; //getting the value for country
     var input_zip= document.getElementById("zip_code").value;// getting the value for zip code
-    var address = "http://api.zippopotam.us/"+ country_name + "/" + input_zip;
+    var address = "https://api.zippopotam.us/"+ country_name + "/" + input_zip;
     var client = new XMLHttpRequest();
 
     client.open("GET", address, true);
