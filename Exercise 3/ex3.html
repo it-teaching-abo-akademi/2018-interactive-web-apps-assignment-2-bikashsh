@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <link rel="stylesheet" href="ex3.css">
+</head>
+
+<body>
+<div id="container">
+    <form>
+        <label for="bus_list">Select bus line: </label>
+           <select name="bus_list" id="bus_list">
+               <option value="" disabled selected>Select line</option>
+           </select>
+           <input type="button" value="Show buses" id="show_buses">
+           <input type="button" value="Refresh" id="refresh">
+           <input type="button" value="Show route" id="show_route">
+    </form>
+    <div id="myMap">
+       <div id="map"></div>
+    </div>
+
+</div>
+<script src="ex3.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGtkYuuVi-HO7NVqKV2WR6yWn6ep4Xzbw&callback=showMap"></script>
+</body>
+</html>

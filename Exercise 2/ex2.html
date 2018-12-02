@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <link rel="stylesheet" href="ex2.css" type="text/css">
+</head>
+<body>
+
+    <div class="input">
+        <div class="column left">
+            <p>Select your Country&nbsp;&nbsp;
+                <select id="selection">
+                    <option value="fr">France</option>
+                    <option value="fi">Finland</option>
+                    <option value="se">Sweden</option>
+                    <option value="de">Germany</option>
+                    <option value="us">US</option>
+                    <option value="gb">UK</option>
+                </select>
+            </p>
+            <p>ZIP code&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;<input id="zip_code" type="text" placeholder="Enter a ZIP code"></p>
+            <button id="search">Search</button> <br><br>
+            <!--result table-->
+            <div id="tableDiv">
+                <table id="myTable">
+                    <tr id="headerRow">
+                        <th>Place name</th>
+                        <th>Longitude</th>
+                        <th>Latitude</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="column right">
+            <h3> History of the last 10 searches:</h3><br>
+            <ul id="history"></ul>
+
+        </div>
+    </div>
+    <div id="map">
+    </div>
+
+
+
+
+
+
+    <script src="ex2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGtkYuuVi-HO7NVqKV2WR6yWn6ep4Xzbw&callback=f_request"></script>
+</body>
+</html>
