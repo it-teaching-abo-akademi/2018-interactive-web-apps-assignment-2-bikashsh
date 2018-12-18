@@ -2,7 +2,6 @@ var marker_list = [];
 var routePath;
 var storedName;
 var pathBounds;
-var dataSet;
 
 window.onload = function(){
         document.getElementById("show_buses").onclick = showBuses; //shows buses of selected line on clicking "Show buses" button
@@ -24,9 +23,10 @@ function getRequest(url, callback){
     client.send();
 }
 function getLatestDataSet(data){
-    dataSet = data["datasets"][0];
-    getRequest("https://data.foli.fi/gtfs/v0/20181127-130442/routes", fetchRouteList); //Fetching the routes
+   getRequest("https://data.foli.fi/gtfs/v0/20181207-145720/routes", fetchRouteList); //Fetching the routes
 }
+
+
 
 function deleteMarkers(){
     setMapOnAll(null);
@@ -68,12 +68,13 @@ function showRoutes(){
 //function to fetch the route list to dropdown menu
 function fetchRouteList(routeList){
     var routeChoices = [];
-    for(i=0; i<routeList.length; i++){
+    for(let i=0; i<routeList.length; i++){
         var routeIdAndName = [routeList[i].route_id, routeList[i].route_short_name]; //route_short_name is the actual bus number.
         routeChoices.push(routeIdAndName);
     }
+
 //Adding the routes to the dropdown menu
-    for(i=0; i<routeChoices.length; i++){
+    for(let i=0; i<routeChoices.length; i++){
         var routeId = routeChoices[i][0];
         var routeName = routeChoices[i][1];
         $("#bus_list").append($("<option></option>").attr("value", routeId).text(routeName));
@@ -118,12 +119,12 @@ function showLocations(data){
 
 //function to acquire route for route id
 function getTrips(routeId){
-    getRequest("https://data.foli.fi/gtfs/v0/20181127-130442/trips/route/" + routeId, getShape);
+    getRequest("https://data.foli.fi/gtfs/v0/20181207-145720/trips/route/" + routeId, getShape);
 }
 
 //function to get request for accessing shape id
 function getShape(trips){
-    getRequest("https://data.foli.fi/gtfs/v0/20181127-130442/shapes/" + trips[1].shape_id, drawRoute);
+    getRequest("https://data.foli.fi/gtfs/v0/20181207-145720/shapes/" + trips[1].shape_id, drawRoute);
 }
 
 //function to create route with the help of fetched coordinates
